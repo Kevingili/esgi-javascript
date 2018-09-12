@@ -1,6 +1,11 @@
 function ucfirst(string) {
-    return string.charAt(0).toUpperCase() + string.slice(1);
+    if (string !== "" && string !== null) {
+        return string.charAt(0).toUpperCase() + string.slice(1);
+    }
+    return "";
 }
+
+console.log(ucfirst(''));
 
 function capitalize(string) {
     words = string.split(" ").map(function(string) {
