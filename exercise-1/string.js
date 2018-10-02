@@ -39,29 +39,42 @@ function snake_case(string) {
 }
 
 function leet(string) {
-    string = string.replace(/[aA]+/g, "4");
-    string = string.replace(/[oO]+/g, "0");
-    string = string.replace(/[eE]+/g, "3");
-    string = string.replace(/[sS]+/g, "5");
-    string = string.replace(/[tT]+/g, "7");
-    string = string.replace(/[iI]+/g, "1");
-    string = string.replace(/[bB]+/g, "8");
-    return string;
+    if (string !== "" && string !== null && typeof string === 'string') {
+        string = string .replace(/a/gi, '4');
+        string = string.replace(/e/gi, '3');
+        string = string.replace(/i/gi, '1');
+        string = string.replace(/o/gi, '0');
+        string = string.replace(/u/gi, '(_)');
+        string = string .replace(/y/gi, '7');
+        return string;
+    }
+    return "";
+    
 }
 
+console.log(leet('mon travail'))
+
 function verlan(string) {
-    words = string.split(" ").map(function(string) {
-        return string
-            .split("")
-            .reverse()
-            .join("");
-    });
-    return words.join(" ");
+    if (string !== "" && string !== null && typeof string === 'string') {
+        words = string.split(" ").map(function(string) {
+            return string
+                .split("")
+                .reverse()
+                .join("");
+        });
+        return words.join(" ");
+    }
+    return "";
+    
 }
 
 function yoda(string) {
-    return string
-        .split(" ")
-        .reverse()
-        .join(" ");
+    if (string !== "" && string !== null && typeof string === 'string') {
+        return string
+            .split(" ")
+            .reverse()
+            .join(" ");
+    }
+    return "";
+    
 }
