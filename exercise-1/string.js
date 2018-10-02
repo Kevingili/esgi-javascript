@@ -1,31 +1,41 @@
 function ucfirst(string) {
-    if (string !== "" && string !== null) {
-        return string.charAt(0).toUpperCase() + string.slice(1);
+    if (string !== "" && string !== null && typeof string === 'string') {
+        return string.charAt(0).toUpperCase() + string.substr(1, string.length - 1).toLowerCase();
     }
     return "";
 }
 
-console.log(ucfirst(''));
-
 function capitalize(string) {
-    words = string.split(" ").map(function(string) {
-        return ucfirst(string);
-    });
-    return words.join(" ");
+    if (string !== "" && string !== null && typeof string === 'string') {
+        words = string.split(' ').map(function(string) {
+            return ucfirst(string);
+        });
+        return words.join(' ');
+    }
+    return "";
 }
 
 function camelCase(string) {
-    words = string.split(" ").map(function(string) {
-        return ucfirst(string);
-    });
-    return words.join("");
+    if (string !== "" && string !== null && typeof string === 'string') {
+        string = string.replace('_', ' ');
+        words = string.split(" ").map(function(string) {
+            return ucfirst(string);
+        });
+        return words.join("");
+    }
+    return "";
+    
 }
 
 function snake_case(string) {
-    words = string.split(" ").map(function(string) {
-        return string.toLowerCase();
-    });
-    return words.join("-");
+    if (string !== "" && string !== null && typeof string === 'string') {
+        words = string.split(" ").map(function(string) {
+            return string.toLowerCase();
+        });
+        return words.join("_");
+    }
+    return "";
+    
 }
 
 function leet(string) {
